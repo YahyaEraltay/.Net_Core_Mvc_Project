@@ -1,0 +1,28 @@
+﻿@using Core_MVC.Models
+@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Department ID</th>
+        <th>Department Name</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.DepartmentID</td>
+            <td>@x.DepartmentName</td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteDep", new { id = x.DepartmentID }, new {@class="btn btn-danger", onclick="return confirm('Are You Sure?')" })
+                <a href="/Department/FetchDep/@x.DepartmentID" class="btn btn-warning" style="margin-left:30px">Update</a>
+                <a href="/Department/DetEmp/@x.DepartmentID" class="btn btn-info" style="margin-left:30px">Details</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Department/NewDep/" class="btn btn-primary">Add Department</a>

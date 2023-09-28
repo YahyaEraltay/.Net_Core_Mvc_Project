@@ -1,0 +1,19 @@
+﻿@model Core_MVC.Models.Department
+@{
+    ViewData["Title"] = "FetchDep";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateDep", "Department", FormMethod.Post))
+{
+    <br />
+    <strong>@Html.LabelFor(x => x.DepartmentID, "Department ID")</strong>
+    @Html.TextBoxFor(x => x.DepartmentID, new {@readonly="readonly", @class = "form-control" })
+    <br />
+    <strong>@Html.LabelFor(x => x.DepartmentName, "Department Name")</strong>
+    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Update</button>
+    
+}
+

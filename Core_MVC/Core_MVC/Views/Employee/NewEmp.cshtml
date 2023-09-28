@@ -1,0 +1,25 @@
+﻿@model Core_MVC.Models.Employee
+
+@{
+    ViewData["Title"] = "NewEmp";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+<br />
+<form class="form-group" method="post">
+    <strong>@Html.LabelFor(x => x.EmployeeName, "Employee Name")</strong>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+    <strong>@Html.LabelFor(x => x.EmployeeSurname, "Employee Surame")</strong>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    <strong>@Html.LabelFor(x => x.EmployeeCity, "Employee City")</strong>
+    @Html.TextBoxFor(x => x.EmployeeCity, new { @class = "form-control" })
+    <br />
+    <label><strong>Employee Department</strong></label>
+    @Html.DropDownListFor(x => x.Department.DepartmentID, (List<SelectListItem>)ViewBag.vls, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Add Department</button>
+</form>
+

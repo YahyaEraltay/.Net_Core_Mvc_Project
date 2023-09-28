@@ -1,0 +1,28 @@
+﻿@using Core_MVC.Models
+@model List<Employee>
+
+@{
+    ViewData["Title"] = "DetEmp";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2>@ViewBag.DepN Department</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Surname</th>
+        <th>Employee City</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.EmployeeID</td>
+            <td>@x.EmployeeName</td>
+            <td>@x.EmployeeSurname</td>
+            <td>@x.EmployeeCity</td>
+        </tr>
+    }
+</table>
+

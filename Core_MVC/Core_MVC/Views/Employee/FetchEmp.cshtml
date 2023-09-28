@@ -1,0 +1,28 @@
+﻿@model Core_MVC.Models.Employee
+@{
+    ViewData["Title"] = "FetchEmp";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateEmp", "Employee", FormMethod.Post))
+{
+    <strong>@Html.LabelFor(x => x.EmployeeID, "Employee ID")</strong>
+    @Html.TextBoxFor(x => x.EmployeeID, new {@readonly="readonly", @class = "form-control" })
+    <br />
+    <strong>@Html.LabelFor(x => x.EmployeeName, "Employee Name")</strong>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+    <strong>@Html.LabelFor(x => x.EmployeeSurname, "Employee Surname")</strong>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    <strong>@Html.LabelFor(x => x.EmployeeCity, "Employee City")</strong>
+    @Html.TextBoxFor(x => x.EmployeeCity, new { @class = "form-control" })
+    <br />
+    <strong><label>Employee Department</label></strong>
+    @Html.DropDownListFor(x => x.Department.DepartmentID, (SelectList)ViewBag.dep, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Update</button>
+
+}
+
+
