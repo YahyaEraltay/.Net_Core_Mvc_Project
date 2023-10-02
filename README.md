@@ -1,1 +1,1 @@
-Bu projede .net core mvc kullanılmıştır. Code First yöntemi kullanılmış olup login işlemleri gerçekleştirilmiştir.
+Bu projede .net core mvc kullanılmıştır. Entity Framework ve Linq kullanılmış olup login işlemleri gerçekleştirilmiştir.
